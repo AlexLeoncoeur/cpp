@@ -15,5 +15,13 @@ void	Add(phonebook phoneB)
 
 void	Search(phonebook phoneB)
 {
-
+	for (int i = 0; i < 8; i++)
+		if (searchname == phoneB.GetName(i))
+			break;
+	if (searchname == phoneB.GetName(i))
+	{
+		std::cout << "Contact: " << searchname << std::endl;
+		std::cout << "Phone Number: " << phoneB.getNumber(i) << std::endl;
+	}
 }
+//Mirar subject para ver que necesita search de input (nombre)

@@ -26,3 +26,12 @@ void	phonebook::AddToContacts(std::string name, int number)
 	this->contacts[this->NumberOfContacts() % 8] = contact(name, number);
 }
 
+int phonebook::getNumber(int i)
+{
+	return (this->contacts[i].getNumber());
+}
+
+std::string	phonebook::GetName(int i)
+{
+	return (this->contacts[i].getName());
+}

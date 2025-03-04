@@ -21,3 +21,8 @@ int contact::getNumber()
 {
 	return (this->number);
 }
+
+std::string contact::getName()
+{
+	return (this->name);
+}

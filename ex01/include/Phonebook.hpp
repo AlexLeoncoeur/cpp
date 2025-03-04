@@ -26,6 +26,8 @@ class phonebook
 		int		NumberOfContacts();
 		void	AddContactNumber();
 		void	AddToContacts(std::string name, int number);
+		std::string	GetName(int i);
+		int 	getNumber(int i);
 };
 
 #endif

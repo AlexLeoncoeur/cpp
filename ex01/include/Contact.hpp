@@ -25,6 +25,7 @@ class contact
 		contact(std::string name, int number);
 		~contact();
 		int	getNumber();
+		std::string	getName();
 };
 
 #endif
