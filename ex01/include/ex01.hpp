@@ -20,7 +20,7 @@
 # include "Contact.hpp"
 # include "Phonebook.hpp"
 
-void	Add(phonebook phoneB);
-void	Search(phonebook phoneB);
+void	Add(phonebook *phoneB);
+void	Search(phonebook *phoneB);
 
 #endif

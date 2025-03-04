@@ -18,17 +18,16 @@
 class phonebook
 {
 	private:
-		contact contacts[8];
+		contact *contacts[8];
 		int		ContactAmount;
 	public:
 		phonebook();
 		~phonebook();
 		int		NumberOfContacts();
+		void	initContacts(phonebook phoneB);
 		void	AddContactNumber();
-		void	AddToContacts(std::string name, int number);
-		int 	getNumber(int i);
-		std::string	GetName(int i);
-		contact* phonebook::getContacts();
+		void	AddToContacts(std::string firstName, std::string lastName, std::string number);
+		contact** getContacts();
 };
 
 #endif

@@ -18,14 +18,17 @@
 class contact
 {
 	private:
-		int number;
-		std::string name;
+		std::string number;
+		std::string firstName;
+		std::string lastName;
 	public:
 		contact();
-		contact(std::string name, int number);
+		contact(std::string firstName, std::string secondName, std::string number);
 		~contact();
-		int	getNumber();
-		std::string	getName();
+		std::string	getNumber();
+		std::string	getFirstName();
+		std::string	getLastName();
+		static contact* createContact(std::string firstName, std::string secondName, std::string number);
 };
 
 #endif

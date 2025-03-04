@@ -1,6 +1,6 @@
 #include "../include/ex01.hpp"
 
-static void	CheckAnswer(std::string answer, phonebook phoneB)
+static void	CheckAnswer(std::string answer, phonebook *phoneB)
 {
 	if (answer == "EXIT")
 		std::exit(0);
@@ -19,7 +19,7 @@ int	main(void)
 	{
 		std::cout << "Enter command: ADD, SEARCH, EXIT" << std::endl;
 		std::cin >> answer;
-		CheckAnswer(answer, phoneB);
+		CheckAnswer(answer, &phoneB);
 	}
 	return (0);
 }
