@@ -35,3 +35,8 @@ std::string	phonebook::GetName(int i)
 {
 	return (this->contacts[i].getName());
 }
+
+contact* phonebook::getContacts()
+{
+	return (this->contacts);
+}
