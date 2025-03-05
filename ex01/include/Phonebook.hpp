@@ -26,7 +26,7 @@ class phonebook
 		int		NumberOfContacts();
 		void	initContacts(phonebook phoneB);
 		void	AddContactNumber();
-		void	AddToContacts(std::string firstName, std::string lastName, std::string number);
+		void	AddToContacts(std::string firstName, std::string lastName, std::string nickname, std::string secret, std::string number);
 		contact** getContacts();
 };
 

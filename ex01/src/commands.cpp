@@ -16,6 +16,8 @@ void	Add(phonebook *phoneB)
 {
 	std::string	firstName;
 	std::string	lastName;
+	std::string	nickname;
+	std::string	secret;
 	std::string	number;
 
 	std::cout << "Creating new contact:" << std::endl << "Introduce first name:" << std::endl;
@@ -25,9 +27,23 @@ void	Add(phonebook *phoneB)
 		std::cout << "Invalid input" << std::endl;
 		return ;
 	}
-	std::cout << "Introduce  last name:" << std::endl;
+	std::cout << "Introduce last name:" << std::endl;
 	std::cin >> lastName;
 	if (lastName.empty())
+	{
+		std::cout << "Invalid input" << std::endl;
+		return ;
+	}
+	std::cout << "Introduce nickname:" << std::endl;
+	std::cin >> nickname;
+	if (nickname.empty())
+	{
+		std::cout << "Invalid input" << std::endl;
+		return ;
+	}
+	std::cout << "Introduce darkest secret:" << std::endl;
+	std::cin >> secret;
+	if (secret.empty())
 	{
 		std::cout << "Invalid input" << std::endl;
 		return ;
@@ -39,7 +55,7 @@ void	Add(phonebook *phoneB)
 		std::cout << "Invalid input" << std::endl;
 		return ;
 	}
-	phoneB->AddToContacts(firstName, lastName, number);
+	phoneB->AddToContacts(firstName, lastName, nickname, secret, number);
 	phoneB->AddContactNumber();
 }
 
@@ -54,7 +70,8 @@ static std::string intToString(int nb)
 
 static int	checkContactContent(contact *contact)
 {
-	if (contact->getFirstName().empty() || contact->getLastName().empty() || contact->getNumber().empty())
+	if (contact->getFirstName().empty() || contact->getLastName().empty()
+		|| contact->getNumber().empty() || contact->getSecret().empty() || contact->getNickname().empty())
 		return (0);
 	return (1);
 }
@@ -79,6 +96,8 @@ static void	searchInput(phonebook *phoneB)
 	contacts = phoneB->getContacts();
 	std::cout << "Contact first name: " << contacts[std::atoi(index.c_str())]->getFirstName() << std::endl;
 	std::cout << "Contact last name: " << contacts[std::atoi(index.c_str())]->getLastName() << std::endl;
+	std::cout << "Contact nickname: " << contacts[std::atoi(index.c_str())]->getNickname() << std::endl;
+	std::cout << "Contact secret: " << contacts[std::atoi(index.c_str())]->getSecret() << std::endl;
 	std::cout << "Contact phone number: " << contacts[std::atoi(index.c_str())]->getNumber() << std::endl;
 }
 

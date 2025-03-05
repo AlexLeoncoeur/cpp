@@ -26,11 +26,12 @@ void	phonebook::AddContactNumber()
 	this->ContactAmount++;
 }
 
-void	phonebook::AddToContacts(std::string firstName, std::string lastName, std::string number)
+void	phonebook::AddToContacts(std::string firstName,
+	std::string lastName, std::string nickname, std::string secret, std::string number)
 {
 	if (this->contacts[this->NumberOfContacts() % 8])
 		delete(this->contacts[this->NumberOfContacts() % 8]);
-	this->contacts[this->NumberOfContacts() % 8] = contact::createContact(firstName, lastName, number);
+	this->contacts[this->NumberOfContacts() % 8] = contact::createContact(firstName, lastName, nickname, secret, number);
 }
 
 contact** phonebook::getContacts()
