@@ -5,7 +5,10 @@ phonebook::phonebook()
 	std::cout << "Phonebook constructor called" << std::endl;
 	this->ContactAmount = 0;
 	for (int i = 0; i < 8; i++)
-		this->contacts[i] = NULL;
+	{
+		this->contacts[i] = nullptr;
+
+	}
 }
 
 phonebook::~phonebook()
@@ -25,6 +28,8 @@ void	phonebook::AddContactNumber()
 
 void	phonebook::AddToContacts(std::string firstName, std::string lastName, std::string number)
 {
+	if (this->contacts[this->NumberOfContacts() % 8])
+		delete(this->contacts[this->NumberOfContacts() % 8]);
 	this->contacts[this->NumberOfContacts() % 8] = contact::createContact(firstName, lastName, number);
 }
 
