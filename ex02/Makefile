@@ -13,16 +13,16 @@ RED		= \033[31;1m
 #---------- BASE ----------#
 
 # FILES 
-CPPFILES = \
+CPP_FILES = tests.cpp Account.cpp\
 
 # DIRECTORIES 
 SRC_DIR = src/
 OBJ_DIR = objs/
 
 # OBJECTS
-CPP_OFILES = $(addprefix $(OBJ_DIR), $(CPP_FILES:.c=.o))
+CPP_OFILES = $(addprefix $(OBJ_DIR), $(CPP_FILES:.cpp=.o))
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c
+$(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
 	@ mkdir -p $(OBJ_DIR)
 	@ echo "$(BLUE)-Compiling File: $(CYAN)src/$(RESET)$(notdir $<)"
 	@ $(CC) $(FLAGS) -c $< -o $@ -g
