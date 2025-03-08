@@ -1,11 +1,11 @@
 #include "../include/ex01.hpp"
 
-contact::contact()
+Contact::Contact()
 {
 	std::cout << "Contact default constructor called." << std::endl;
 }
 
-contact::contact(std::string firstName,
+Contact::Contact(std::string firstName,
 	std::string lastName, std::string nickname, std::string secret, std::string number)
 {
 	std::cout << "Contact alternative constructor called." << std::endl;
@@ -16,38 +16,38 @@ contact::contact(std::string firstName,
 	this->number = number;
 }
 
-contact::~contact()
+Contact::~Contact()
 {
 	std::cout << "Contact default destructor called." << std::endl;
 }
 
-contact* contact::createContact(std::string firstName,
+Contact* Contact::createContact(std::string firstName,
 	std::string lastName, std::string nickname, std::string secret, std::string number)
 {
-	return (new contact(firstName, lastName, nickname, secret, number));
+	return (new Contact(firstName, lastName, nickname, secret, number));
 }
 
-std::string contact::getNumber()
+std::string Contact::getNumber()
 {
 	return (this->number);
 }
 
-std::string contact::getFirstName()
+std::string Contact::getFirstName()
 {
 	return (this->firstName);
 }
 
-std::string contact::getLastName()
+std::string Contact::getLastName()
 {
 	return (this->lastName);
 }
 
-std::string contact::getNickname()
+std::string Contact::getNickname()
 {
 	return (this->nickname);
 }
 
-std::string contact::getSecret()
+std::string Contact::getSecret()
 {
 	return (this->secret);
 }

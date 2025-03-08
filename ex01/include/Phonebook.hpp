@@ -15,19 +15,19 @@
 
 # include "ex01.hpp"
 
-class phonebook
+class Phonebook
 {
 	private:
-		contact *contacts[8];
-		int		ContactAmount;
+		Contact *contacts[8];
+		int		contactAmount;
 	public:
-		phonebook();
-		~phonebook();
-		int		NumberOfContacts();
-		void	initContacts(phonebook phoneB);
-		void	AddContactNumber();
-		void	AddToContacts(std::string firstName, std::string lastName, std::string nickname, std::string secret, std::string number);
-		contact** getContacts();
+		Phonebook();
+		~Phonebook();
+		int		numberOfContacts();
+		void	initContacts(Phonebook phoneB);
+		void	addContactNumber();
+		void	addToContacts(std::string firstName, std::string lastName, std::string nickname, std::string secret, std::string number);
+		Contact** getContacts();
 };
 
 #endif

@@ -1,9 +1,9 @@
 #include "../include/ex01.hpp"
 
-phonebook::phonebook()
+Phonebook::phonebook()
 {
 	std::cout << "Phonebook constructor called" << std::endl;
-	this->ContactAmount = 0;
+	this->contactAmount = 0;
 	for (int i = 0; i < 8; i++)
 	{
 		this->contacts[i] = nullptr;
@@ -11,24 +11,24 @@ phonebook::phonebook()
 	}
 }
 
-phonebook::~phonebook()
+Phonebook::~phonebook()
 {
 	std::cout << "Phonebook destructor called" << std::endl;
 	for (int i = 0; this->contacts[i]; i++)
 		delete(this->contacts[i]);
 }
 
-int	phonebook::NumberOfContacts()
+int	Phonebook::numberOfContacts()
 {
 	return (this->ContactAmount);
 }
 
-void	phonebook::AddContactNumber()
+void	Phonebook::AddContactNumber()
 {
 	this->ContactAmount++;
 }
 
-void	phonebook::AddToContacts(std::string firstName,
+void	Phonebook::AddToContacts(std::string firstName,
 	std::string lastName, std::string nickname, std::string secret, std::string number)
 {
 	if (this->contacts[this->NumberOfContacts() % 8])
@@ -36,7 +36,7 @@ void	phonebook::AddToContacts(std::string firstName,
 	this->contacts[this->NumberOfContacts() % 8] = contact::createContact(firstName, lastName, nickname, secret, number);
 }
 
-contact** phonebook::getContacts()
+contact** Phonebook::getContacts()
 {
 	return (this->contacts);
 }

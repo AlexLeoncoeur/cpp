@@ -12,7 +12,7 @@ static int	checkDigit(std::string number)
 	return (0);
 }
 
-void	Add(phonebook *phoneB)
+void	add(Phonebook *phoneB)
 {
 	std::string	firstName;
 	std::string	lastName;
@@ -55,8 +55,8 @@ void	Add(phonebook *phoneB)
 		std::cout << "Invalid input" << std::endl;
 		return ;
 	}
-	phoneB->AddToContacts(firstName, lastName, nickname, secret, number);
-	phoneB->AddContactNumber();
+	phoneB->addToContacts(firstName, lastName, nickname, secret, number);
+	phoneB->addContactNumber();
 }
 
 static std::string intToString(int nb)
@@ -68,7 +68,7 @@ static std::string intToString(int nb)
 
 }
 
-static int	checkContactContent(contact *contact)
+static int	checkContactContent(Contact *contact)
 {
 	if (contact->getFirstName().empty() || contact->getLastName().empty()
 		|| contact->getNumber().empty() || contact->getSecret().empty() || contact->getNickname().empty())
@@ -76,21 +76,21 @@ static int	checkContactContent(contact *contact)
 	return (1);
 }
 
-static void	searchInput(phonebook *phoneB)
+static void	searchInput(Phonebook *phoneB)
 {
 	std::string	index;
-	contact 	**contacts;
+	Contact 	**contacts;
 	
 	std::cout << "Input desired contact's index: " << std::endl;
 	std::cin >> index;
 	if (std::cin.eof())
-		phoneB->~phonebook(), std::exit(0);
+		phoneB->~Phonebook(), std::exit(0);
 	if (index.empty() || checkDigit(index) || std::atoi(index.c_str()) > 7 || std::atoi(index.c_str()) < 0)
 	{
 		std::cout << "Invalid input" << std::endl;
 		return ;
 	}
-	if (phoneB->NumberOfContacts() == 0 || std::atoi(index.c_str()) >= phoneB->NumberOfContacts() || std::atoi(index.c_str()) > 7)
+	if (phoneB->numberOfContacts() == 0 || std::atoi(index.c_str()) >= phoneB->numberOfContacts() || std::atoi(index.c_str()) > 7)
 	{
 		std::cout << "No contact data" << std::endl;
 		return ;
@@ -103,7 +103,7 @@ static void	searchInput(phonebook *phoneB)
 	std::cout << "Contact phone number: " << contacts[std::atoi(index.c_str())]->getNumber() << std::endl;
 }
 
-static void	putLine(contact  **contacts, std::string aContactData, int i)
+static void	putLine(Contact  **contacts, std::string aContactData, int i)
 {
 	bool	stop = 0;
 
@@ -125,9 +125,9 @@ static void	putLine(contact  **contacts, std::string aContactData, int i)
 	}
 }
 
-static void	putColumns(phonebook *phoneB)
+static void	putColumns(Phonebook *phoneB)
 {
-	contact 	**contacts = phoneB->getContacts();
+	Contact 	**contacts = phoneB->getContacts();
 
 	std::cout << "|-----Index|------Name|---Surname|Phone num.|" << std::endl;
 	for (int i = 0; i < 8 && contacts[i] && checkContactContent(contacts[i]); i++)
@@ -141,7 +141,7 @@ static void	putColumns(phonebook *phoneB)
 	}
 }
 
-void	Search(phonebook *phoneB)
+void	search(Phonebook *phoneB)
 {
 	putColumns(phoneB);
 	searchInput(phoneB);

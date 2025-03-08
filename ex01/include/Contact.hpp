@@ -15,7 +15,7 @@
 
 # include "ex01.hpp"
 
-class contact
+class Contact
 {
 	private:
 	std::string firstName;
@@ -24,16 +24,16 @@ class contact
 	std::string secret;
 	std::string number;
 	public:
-		contact();
-		contact(std::string firstName,
+		Contact();
+		Contact(std::string firstName,
 			std::string lastName, std::string nickname, std::string secret, std::string number);
-		~contact();
+		~Contact();
 		std::string	getNumber();
 		std::string	getFirstName();
 		std::string	getLastName();
 		std::string getNickname();
 		std::string getSecret();
-		static contact* createContact(std::string firstName,
+		static Contact* createContact(std::string firstName,
 			std::string lastName, std::string nickname, std::string secret, std::string number);
 };
 
