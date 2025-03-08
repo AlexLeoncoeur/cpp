@@ -83,6 +83,8 @@ static void	searchInput(phonebook *phoneB)
 	
 	std::cout << "Input desired contact's index: " << std::endl;
 	std::cin >> index;
+	if (std::cin.eof())
+		phoneB->~phonebook(), std::exit(0);
 	if (index.empty() || checkDigit(index) || std::atoi(index.c_str()) > 7 || std::atoi(index.c_str()) < 0)
 	{
 		std::cout << "Invalid input" << std::endl;

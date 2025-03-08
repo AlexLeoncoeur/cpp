@@ -14,6 +14,8 @@ phonebook::phonebook()
 phonebook::~phonebook()
 {
 	std::cout << "Phonebook destructor called" << std::endl;
+	for (int i = 0; this->contacts[i]; i++)
+		delete(this->contacts[i]);
 }
 
 int	phonebook::NumberOfContacts()

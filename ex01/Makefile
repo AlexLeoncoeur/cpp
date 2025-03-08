@@ -41,8 +41,8 @@ $(NAME): compiling $(CPP_OFILES)
 
 debug: all
 	@ echo
-	@ $(CC) $(CFLAGS) $(CPP_OFILES) -o $(NAME) -g -fsanitize=address
 	@ echo "$(RED)DEBUG MODE ACTIVATED!$(RESET)"
+	@ valgrind -s ./$(NAME)
 
 libft:
 	@ make --silent -C include/libft/ bonus
@@ -60,7 +60,6 @@ fclean: clean
 re: fclean all
 
 rebug: re debug
-	@ ./ex01
 
 compiling:
 	@ echo "$(MAGENTA)COMPILING PROJECT: $(RESET)"

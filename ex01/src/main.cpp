@@ -2,6 +2,8 @@
 
 static void	CheckAnswer(std::string answer, phonebook *phoneB)
 {
+	if (answer.empty())
+		return ;
 	if (answer == "EXIT")
 		std::exit(0);
 	if (answer == "ADD")
@@ -19,6 +21,8 @@ int	main(void)
 	{
 		std::cout << "Enter command: ADD, SEARCH, EXIT" << std::endl;
 		std::cin >> answer;
+		if (std::cin.eof())
+			phoneB.~phonebook(), std::exit(0);
 		CheckAnswer(answer, &phoneB);
 	}
 	return (0);

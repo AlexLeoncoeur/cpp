@@ -29,6 +29,7 @@ int	Account::getNbWithdrawals( void )
 
 void	Account::displayAccountsInfos( void )
 {
+	_displayTimestamp();
 	std::cout << "accounts:" << getNbAccounts() << ";";
 	std::cout << "total:" << getTotalAmount() << ";";
 	std::cout << "deposits:" << getNbDeposits() << ";";
@@ -46,6 +47,7 @@ Account::Account( int initial_deposit )
 	_amount = initial_deposit;
 	_nbDeposits = 0;
 	_nbWithdrawals = 0;
+	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";";
 	std::cout << "amount:" << _amount << ";";
 	std::cout << "created" << std::endl;
@@ -53,6 +55,7 @@ Account::Account( int initial_deposit )
 
 Account::~Account( void )
 {
+	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";";
 	std::cout << "amount:" << _amount << ";";
 	std::cout << "closed" << std::endl;
@@ -61,6 +64,7 @@ Account::~Account( void )
 void	Account::makeDeposit( int deposit )
 {
 	_totalAmount += deposit;
+	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";";
 	std::cout << "p_amount:" << _amount << ";";
 	std::cout << "deposit:" << deposit << ";";
@@ -71,6 +75,7 @@ void	Account::makeDeposit( int deposit )
 
 bool	Account::makeWithdrawal( int withdrawal )
 {
+	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";";
 	std::cout << "p_amount:" << _amount << ";";
 	if (_amount - withdrawal < 0)
@@ -90,6 +95,7 @@ int		Account::checkAmount( void ) const
 
 void	Account::displayStatus( void ) const
 {
+	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";";
 	std::cout << "amount:" << _amount << ";";
 	std::cout << "deposits:" << _nbDeposits << ";";
@@ -97,17 +103,21 @@ void	Account::displayStatus( void ) const
 	std::cout << std::endl;
 }
 
-void	_displayTimestamp( void )
+void	Account::_displayTimestamp( void )
 {
 	std::time_t now = std::time(nullptr);
 	std::tm		*localTime = std::localtime(&now);
 
-	std::cout	<< "[" << localTime->tm_year + 1900
-				<< localTime->tm_mon + 1
-				<< localTime->tm_mday
+	std::cout	<< "[" 
+				<< localTime->tm_year + 1900
+				<< (localTime->tm_mon + 1) / 10
+				<< (localTime->tm_mon + 1) % 10
+				<< localTime->tm_mday / 10
+				<< localTime->tm_mday % 10
 				<< "_"
 				<< localTime->tm_hour
 				<< localTime->tm_min
-				<< localTime->tm_sec;
+				<< localTime->tm_sec
+				<< "] ";
 }
 
