@@ -40,7 +40,7 @@ void	Account::displayAccountsInfos( void )
 Account::Account( int initial_deposit )
 {
 	static int	index = 0;
-
+	
 	_nbAccounts++;
 	_totalAmount += initial_deposit;
 	this->_accountIndex = index++;

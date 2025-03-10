@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
@@ -24,7 +25,6 @@ class Phonebook
 		Phonebook();
 		~Phonebook();
 		int		numberOfContacts();
-		void	initContacts(Phonebook phoneB);
 		void	addContactNumber();
 		void	addToContacts(std::string firstName, std::string lastName, std::string nickname, std::string secret, std::string number);
 		Contact** getContacts();
