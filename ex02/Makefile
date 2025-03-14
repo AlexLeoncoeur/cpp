@@ -22,9 +22,9 @@ OBJ_DIR = objs/
 # OBJECTS
 CPP_OFILES = $(addprefix $(OBJ_DIR), $(CPP_FILES:.cpp=.o))
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
+$(OBJ_DIR)%.o: %.cpp
 	@ mkdir -p $(OBJ_DIR)
-	@ echo "$(BLUE)-Compiling File: $(CYAN)src/$(RESET)$(notdir $<)"
+	@ echo "$(BLUE)-Compiling File: $(CYAN)$(RESET)$(notdir $<)"
 	@ $(CC) $(FLAGS) -c $< -o $@ -g
 
 #---------- FLAGS & COMPILATION ----------#

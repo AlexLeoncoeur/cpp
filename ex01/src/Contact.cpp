@@ -1,4 +1,4 @@
-#include "../include/ex01.hpp"
+#include "../include/Contact.hpp"
 
 Contact::Contact()
 {
