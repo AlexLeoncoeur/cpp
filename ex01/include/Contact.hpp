@@ -6,13 +6,11 @@
 /*   By: aarenas- <aarenas-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 13:31:24 by aarenas-          #+#    #+#             */
-/*   Updated: 2025/03/14 12:25:10 by aarenas-         ###   ########.fr       */
+/*   Updated: 2025/03/14 12:49:09 by aarenas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
 
 # include <iostream>
 
@@ -37,5 +35,3 @@ class Contact
 		static Contact* createContact(std::string firstName,
 			std::string lastName, std::string nickname, std::string secret, std::string number);
 };
-
-#endif

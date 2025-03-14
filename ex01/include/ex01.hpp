@@ -6,13 +6,11 @@
 /*   By: aarenas- <aarenas-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 13:31:24 by aarenas-          #+#    #+#             */
-/*   Updated: 2025/03/14 12:33:15 by aarenas-         ###   ########.fr       */
+/*   Updated: 2025/03/14 12:49:17 by aarenas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef EX01_HPP
-# define EX01_HPP
 
 # include <iostream>
 # include <cctype>
@@ -23,5 +21,3 @@
 
 void	add(Phonebook *phoneB);
 void	search(Phonebook *phoneB);
-
-#endif

@@ -6,13 +6,11 @@
 /*   By: aarenas- <aarenas-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 13:31:24 by aarenas-          #+#    #+#             */
-/*   Updated: 2025/03/14 12:32:01 by aarenas-         ###   ########.fr       */
+/*   Updated: 2025/03/14 12:49:23 by aarenas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
 
 # include <iostream>
 # include "../include/Contact.hpp"
@@ -30,5 +28,3 @@ class Phonebook
 		void	addToContacts(std::string firstName, std::string lastName, std::string nickname, std::string secret, std::string number);
 		Contact** getContacts();
 };
-
-#endif
