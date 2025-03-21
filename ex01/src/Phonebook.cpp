@@ -4,7 +4,7 @@ Phonebook::Phonebook()
 {
 	std::cout << "Phonebook constructor called" << std::endl;
 	this->contactAmount = 0;
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < maxContacts; i++)
 	{
 		this->contacts[i] = nullptr;
 
@@ -14,7 +14,7 @@ Phonebook::Phonebook()
 Phonebook::~Phonebook()
 {
 	std::cout << "Phonebook destructor called" << std::endl;
-	for (int i = 0; this->contacts[i]; i++)
+	for (int i = 0; i < this->maxContacts && this->contacts[i]; i++)
 		delete(this->contacts[i]);
 }
 

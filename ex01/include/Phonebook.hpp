@@ -6,7 +6,7 @@
 /*   By: aarenas- <aarenas-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 13:31:24 by aarenas-          #+#    #+#             */
-/*   Updated: 2025/03/14 12:49:23 by aarenas-         ###   ########.fr       */
+/*   Updated: 2025/03/21 13:45:36 by aarenas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 class Phonebook
 {
 	private:
-		Contact *contacts[8];
+		static const int maxContacts = 8;
+		Contact *contacts[maxContacts];
 		int		contactAmount;
 	public:
 		Phonebook();

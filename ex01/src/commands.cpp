@@ -21,35 +21,35 @@ void	add(Phonebook *phoneB)
 	std::string	number;
 
 	std::cout << "Creating new contact:" << std::endl << "Introduce first name:" << std::endl;
-	std::cin >> firstName;
+	std::getline(std::cin,  firstName);
 	if (firstName.empty())
 	{
 		std::cout << "Invalid input" << std::endl;
 		return ;
 	}
 	std::cout << "Introduce last name:" << std::endl;
-	std::cin >> lastName;
+	std::getline(std::cin,  lastName);
 	if (lastName.empty())
 	{
 		std::cout << "Invalid input" << std::endl;
 		return ;
 	}
 	std::cout << "Introduce nickname:" << std::endl;
-	std::cin >> nickname;
+	std::getline(std::cin,  nickname);
 	if (nickname.empty())
 	{
 		std::cout << "Invalid input" << std::endl;
 		return ;
 	}
 	std::cout << "Introduce darkest secret:" << std::endl;
-	std::cin >> secret;
+	std::getline(std::cin,  secret);
 	if (secret.empty())
 	{
 		std::cout << "Invalid input" << std::endl;
 		return ;
 	}
 	std::cout << "Introduce number:" << std::endl;
-	std::cin >> number;
+	std::getline(std::cin,  number);
 	if (number.empty() || checkDigit(number))
 	{
 		std::cout << "Invalid input" << std::endl;
@@ -82,10 +82,10 @@ static void	searchInput(Phonebook *phoneB)
 	Contact 	**contacts;
 	
 	std::cout << "Input desired contact's index: " << std::endl;
-	std::cin >> index;
+	std::getline(std::cin,  index);
 	if (std::cin.eof())
 		phoneB->~Phonebook(), std::exit(0);
-	if (index.empty() || checkDigit(index) || std::atoi(index.c_str()) > 7 || std::atoi(index.c_str()) < 0)
+	if (index.empty() || index.size() > 1 || checkDigit(index) || std::atoi(index.c_str()) > 7 || std::atoi(index.c_str()) < 0)
 	{
 		std::cout << "Invalid input" << std::endl;
 		return ;

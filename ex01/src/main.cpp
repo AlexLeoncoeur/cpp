@@ -20,7 +20,7 @@ int	main(void)
 	while (1)
 	{
 		std::cout << "Enter command: ADD, SEARCH, EXIT" << std::endl;
-		std::cin >> answer;
+		std::getline(std::cin, answer);
 		if (std::cin.eof())
 			phoneB.~Phonebook(), std::exit(0);
 		checkAnswer(answer, &phoneB);
